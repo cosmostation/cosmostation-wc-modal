@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   isAndroid,
   isMobile,
@@ -25,15 +20,15 @@ export const Modal: FunctionComponent<{
     if (checkMobile) {
       if (checkAndroid) {
         saveMobileLinkInfo({
-          name: 'Cosmostation',
-          href: 'intent://wc#Intent;package=wannabit.io.cosmostaion;scheme=cosmostation;end;'
+          name: "Cosmostation",
+          href: "intent://wc#Intent;package=wannabit.io.cosmostaion;scheme=cosmostation;end;",
         });
 
         return `intent://wc?${uri}#Intent;package=wannabit.io.cosmostaion;scheme=cosmostation;end;`;
       } else {
         saveMobileLinkInfo({
-          name: 'Cosmostation',
-          href: 'cosmostation://wc',
+          name: "Cosmostation",
+          href: "cosmostation://wc",
         });
 
         return `cosmostation://wc?${uri}`;
@@ -51,16 +46,16 @@ export const Modal: FunctionComponent<{
     <React.Fragment>
       <div
         style={{
-                position: "fixed",
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0,
-                backgroundColor: "rgba(0,0,0,0.1)",
+          position: "fixed",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: "rgba(0,0,0,0.1)",
 
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
         onClick={(e) => {
           e.preventDefault();
@@ -71,9 +66,9 @@ export const Modal: FunctionComponent<{
       >
         <div
           style={{
-                  padding: 20,
-                  borderRadius: 10,
-                  backgroundColor: "#DDDDDD",
+            padding: 20,
+            borderRadius: 10,
+            backgroundColor: "#DDDDDD",
           }}
           onClick={(e) => {
             e.preventDefault();
@@ -84,24 +79,24 @@ export const Modal: FunctionComponent<{
             <React.Fragment>
               <h3
                 style={{
-                        fontSize: 20,
-                        margin: 0,
-                        marginBottom: 10,
+                  fontSize: 20,
+                  margin: 0,
+                  marginBottom: 10,
                 }}
               >
                 Scan QR Code
               </h3>
               <div>
-                <QRCode size="500" value={uri} />
+                <QRCode size={250} value={uri} />
               </div>
             </React.Fragment>
           ) : (
             <React.Fragment>
               <h3
                 style={{
-                        fontSize: 20,
-                        margin: 0,
-                        marginBottom: 10,
+                  fontSize: 20,
+                  margin: 0,
+                  marginBottom: 10,
                 }}
               >
                 Open App
@@ -114,7 +109,7 @@ export const Modal: FunctionComponent<{
                     }
                   }}
                 >
-                  Open App
+                  Cosmostation
                 </button>
               </div>
             </React.Fragment>

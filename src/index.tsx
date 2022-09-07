@@ -1,7 +1,8 @@
+import { IQRCodeModal } from "@walletconnect/types";
 import { Modal } from "./modal";
 import ReactDom from "react-dom";
 
-export class CosmostationWCModal {
+export class CosmostationWCModal implements IQRCodeModal {
   open(uri: string, cb: any) {
     const wrapper = document.createElement("div");
     wrapper.setAttribute("id", "cosmostation-wc-modal");
@@ -26,3 +27,5 @@ export class CosmostationWCModal {
     }
   }
 }
+
+export default CosmostationWCModal;
